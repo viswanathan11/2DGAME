@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Magic Trap Preview - No Background_0: -997120433658198520
+      Magic Trap Preview - No Background_1: -81998913549931954
+      Magic Trap Preview - No Background_2: 1902686950743290254
+      Magic Trap Preview - No Background_3: 2721242235941724601
+      Magic Trap Preview - No Background_4: 8267006594948036500
+      Magic Trap Preview - No Background_5: 5168720417667888900
+      Magic Trap Preview - No Background_6: 9052019850114479340
+      Magic Trap Preview - No Background_7: -7958378664272362142
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

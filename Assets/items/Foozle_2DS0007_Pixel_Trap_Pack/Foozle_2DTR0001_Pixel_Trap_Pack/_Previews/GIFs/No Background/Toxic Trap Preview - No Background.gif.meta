@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Toxic Trap Preview - No Background_0: -8055490498165998182
+      Toxic Trap Preview - No Background_1: -6851766355108831368
+      Toxic Trap Preview - No Background_2: -1805759799185188301
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Puch Trap Preview - No Background_0: -4566476272904894189
+      Puch Trap Preview - No Background_1: -4807693617714008348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
