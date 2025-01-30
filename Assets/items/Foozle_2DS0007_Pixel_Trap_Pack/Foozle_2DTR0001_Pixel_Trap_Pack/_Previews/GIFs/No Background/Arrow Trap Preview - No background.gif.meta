@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Arrow Trap Preview - No background_0: -9206743464931210527
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

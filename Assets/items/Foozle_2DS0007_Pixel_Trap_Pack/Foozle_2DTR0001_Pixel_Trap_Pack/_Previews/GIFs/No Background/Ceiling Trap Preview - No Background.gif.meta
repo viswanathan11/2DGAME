@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ceiling Trap Preview - No Background_0: -6176021044022593068
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

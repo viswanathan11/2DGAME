@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Worm Trap Preview_0: 1145005952887444456
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
