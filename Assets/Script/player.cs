@@ -13,6 +13,7 @@ public class player : MonoBehaviour
     public Rigidbody2D rb; 
     private bool isGround = true;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,7 +34,7 @@ public class player : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
             facingRight = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space)&& isGround== true)
+        if (Input.GetKeyDown(KeyCode.Space)||Input.GetKey(KeyCode.W)&&isGround==true)
         {
             jump();
             isGround=false;
@@ -46,7 +47,20 @@ public class player : MonoBehaviour
         else{
             animator.SetFloat("Run",0f);
         }
-    
+     
+        if(Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.F)){
+               int randomIndex=Random.Range(0,3);
+               if(randomIndex==0){
+                   animator.SetTrigger("Attack1");
+               }
+               else if(randomIndex==1){
+                   animator.SetTrigger("Attack2");
+               }
+               else if(randomIndex==2){
+                   animator.SetTrigger("Attack3");
+               }
+         
+        }
     }
 
     private void FixedUpdate()
