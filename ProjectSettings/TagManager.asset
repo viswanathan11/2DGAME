@@ -39,8 +39,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: 3
+    uniqueID: 1133491219
+    locked: 0
+  - name: 2
+    uniqueID: 746149941
+    locked: 0
+  - name: 1
+    uniqueID: 2476832963
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Grass
+    uniqueID: 802081481
     locked: 0
   m_RenderingLayers:
   - Default
