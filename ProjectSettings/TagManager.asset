@@ -39,6 +39,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: 6
+    uniqueID: 2919387401
+    locked: 0
+  - name: 5
+    uniqueID: 2214639043
+    locked: 0
+  - name: 4
+    uniqueID: 967474337
+    locked: 0
   - name: 3
     uniqueID: 1133491219
     locked: 0
