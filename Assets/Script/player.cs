@@ -12,6 +12,9 @@ public class player : MonoBehaviour
     private bool facingRight = true;
     public Rigidbody2D rb; 
     private bool isGround = true;
+    public Transform attackPoint;
+    public float attackRadius=1.5f;
+    public LayerMask targetLayer;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -75,11 +78,27 @@ public class player : MonoBehaviour
         velocity.y = jumpHeight;
         rb.velocity = velocity;
     }
+    public void Attack(){
+        Collider2D hitInfo= Physics2D.OverlapCircle(attackPoint.position,attackRadius,targetLayer);
+        if(hitInfo){
+            Debug.Log("We hit"+hitInfo.name);
+        }
+
+
+    }
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.tag=="Ground"){
             isGround=true;
             animator.SetBool("Jump",false);
         }
+    }
+    private void OnDrawGizmosSelected()
+    {if (attackPoint == null)
+        {
+            return;
+        }
+        Gizmos.color=Color.blue;
+        Gizmos.DrawWireSphere(attackPoint.position,attackRadius);
     }
 
 }
