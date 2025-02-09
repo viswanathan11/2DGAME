@@ -15,6 +15,7 @@ public class player : MonoBehaviour
     public Transform attackPoint;
     public float attackRadius=1.5f;
     public LayerMask targetLayer;
+    public int maxHealth=15;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,6 +27,9 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update() 
     {
+        if(maxHealth<=0){
+            Die();
+        }
         movement = Input.GetAxis("Horizontal"); // a=-1,d=1,w=0,s=0;
         if (movement < 0f && facingRight == true)
         {
@@ -81,7 +85,11 @@ public class player : MonoBehaviour
     public void Attack(){
         Collider2D hitInfo= Physics2D.OverlapCircle(attackPoint.position,attackRadius,targetLayer);
         if(hitInfo){
-            Debug.Log("We hit"+hitInfo.name);
+            if(hitInfo.GetComponent<enemyknight>()!=null){
+                hitInfo.GetComponent<enemyknight>().EnemyTakeDamage(1);
+
+            }
+
         }
 
 
@@ -100,5 +108,15 @@ public class player : MonoBehaviour
         Gizmos.color=Color.blue;
         Gizmos.DrawWireSphere(attackPoint.position,attackRadius);
     }
+    public void PlayerTakeDamage(int damage){
+        if(maxHealth<=0){
+            return;
+        }
+        maxHealth-=damage;
+    }
+    void Die(){
+        Debug.Log("Player died");
+        Destroy(this.gameObject);
+    }
+    }
 
-}

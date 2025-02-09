@@ -18,14 +18,19 @@ public class enemyknight : MonoBehaviour
     public Transform attackPoint;
     public float attackRadius=2f;
      public LayerMask AttackLayer;
+     public int maxHealth=3;
 
-    void Start()
-    {
-    }
+    
 
-    // Update is called once per frame
+    // Update is called once per frame run every single time
     void Update()
-    {
+    {if(maxHealth<=0){
+        Die();
+    }
+    if(player==null){
+        animator.SetBool("Playerdead",true);
+        return;
+    }
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             playerinRange = true;
@@ -84,12 +89,28 @@ public class enemyknight : MonoBehaviour
             }
         }
     }
-public void Attack(){
+    
+public void EnemyAttack(){
     Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position,attackRadius,AttackLayer);//it will return the collider of the object that is in the range of the attack point
     if(collInfo){
-        Debug.Log(collInfo.gameObject.name+"has been attacked");
+    if(collInfo.GetComponent<player>()!=null){
+        collInfo.GetComponent<player>().PlayerTakeDamage(1);
     }
+    }
+ }
+public void EnemyTakeDamage(int damage){
+    if(maxHealth<=0){
+        return;//whatever line after it will not be executed
+    }
+    maxHealth-=damage;
+
 }
+public void Die(){
+    Debug.Log("Enemy died");
+    Destroy(this.gameObject);
+
+}
+
     private void OnDrawGizmosSelected()
     {
         if (detectPoint == null)

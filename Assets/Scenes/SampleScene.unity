@@ -51418,8 +51418,12 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8790902604068681811, guid: b563d0e0bc5caf1429c66df18c28e1b8, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790902604068681811, guid: b563d0e0bc5caf1429c66df18c28e1b8, type: 3}
       propertyPath: attackRadius
-      value: 1.7
+      value: 2.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -51493,7 +51497,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 593730437274378215}
+  - {fileID: 7102666399199276283}
   - {fileID: 1815723312}
   - {fileID: 1835370904}
   - {fileID: 425597434}
-  - {fileID: 7102666399199276283}
