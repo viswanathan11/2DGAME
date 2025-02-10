@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    public Text MaxHealthText;
     public  Animator animator;
     private float movement;
     public float speed = 7f;
@@ -30,6 +29,7 @@ public class player : MonoBehaviour
         if(maxHealth<=0){
             Die();
         }
+        MaxHealthText.text=maxHealth.ToString();
         movement = Input.GetAxis("Horizontal"); // a=-1,d=1,w=0,s=0;
         if (movement < 0f && facingRight == true)
         {
