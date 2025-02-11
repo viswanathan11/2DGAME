@@ -1,41 +1,49 @@
 using UnityEngine.UI;
 using UnityEngine;
-using Unity.VisualScripting;
-using System.Security.Cryptography;
+
 
 public class player : MonoBehaviour
 {
+    private bool isWon = false;
+    public float fallThreshold = -15f; // Adjust this based on your level design
     public GameObject gameVictoryUi;
     public GameObject gameOverUI;
-    public int currentCoin=0;
+    public int currentCoin = 0;
     public Text CurrentCoinText;
     public Text MaxHealthText;
-    public  Animator animator;
+    public Animator animator;
     private float movement;
     public float speed = 7f;
     public float jumpHeight = 10f;
     private bool facingRight = true;
-    public Rigidbody2D rb; 
+    public Rigidbody2D rb;
     private bool isGround = true;
     public Transform attackPoint;
-    public float attackRadius=1.5f;
+    public float attackRadius = 1.5f;
     public LayerMask targetLayer;
-    public int maxHealth=15;
-
+    public int maxHealth = 15;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update() 
-    {CurrentCoinText.text=currentCoin.ToString();
-        if(maxHealth<=0){
+    void Update()
+    {
+        if (isWon)
+        {
+            animator.SetFloat("Run", 0);
+            movement = 0;
+            speed = 0;
+            return;
+        }
+        CurrentCoinText.text = currentCoin.ToString();
+        if (maxHealth <= 0)
+        {
             Die();
         }
-        MaxHealthText.text=maxHealth.ToString();
+        MaxHealthText.text = maxHealth.ToString();
         movement = Input.GetAxis("Horizontal"); // a=-1,d=1,w=0,s=0;
         if (movement < 0f && facingRight == true)
         {
@@ -47,32 +55,40 @@ public class player : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
             facingRight = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space)||Input.GetKey(KeyCode.W)&&isGround==true)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.W)) && isGround == true)
         {
             jump();
-            isGround=false;
-            animator.SetBool("Jump",true);
+            isGround = false;
+            animator.SetBool("Jump", true);
         }
-        if(Mathf.Abs(movement)>.1f){//abs make -1 and 1 to 1
-            animator.SetFloat("Run",1f);
+        if (Mathf.Abs(movement) > 0.1f) // Adjust the threshold as needed
+        {
+            animator.SetFloat("Run", 1f);
+        }
+        else
+        {
+            animator.SetFloat("Run", 0f);
+        }
 
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F))
+        {
+            int randomIndex = Random.Range(0, 3);
+            if (randomIndex == 0)
+            {
+                animator.SetTrigger("Attack1");
+            }
+            else if (randomIndex == 1)
+            {
+                animator.SetTrigger("Attack2");
+            }
+            else if (randomIndex == 2)
+            {
+                animator.SetTrigger("Attack3");
+            }
         }
-        else{
-            animator.SetFloat("Run",0f);
-        }
-     
-        if(Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.F)){
-               int randomIndex=Random.Range(0,3);
-               if(randomIndex==0){
-                   animator.SetTrigger("Attack1");
-               }
-               else if(randomIndex==1){
-                   animator.SetTrigger("Attack2");
-               }
-               else if(randomIndex==2){
-                   animator.SetTrigger("Attack3");
-               }
-         
+        if (transform.position.y < fallThreshold) // Adjust the value based on your level
+        {
+            Die();
         }
     }
 
@@ -88,58 +104,72 @@ public class player : MonoBehaviour
         velocity.y = jumpHeight;
         rb.velocity = velocity;
     }
-    public void Attack(){
-        Collider2D hitInfo= Physics2D.OverlapCircle(attackPoint.position,attackRadius,targetLayer);
-        if(hitInfo){
-            if(hitInfo.GetComponent<enemyknight>()!=null){
+
+    public void Attack()
+    {
+        Collider2D hitInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, targetLayer);
+        if (hitInfo)
+        {
+            if (hitInfo.GetComponent<enemyknight>() != null)
+            {
                 hitInfo.GetComponent<enemyknight>().EnemyTakeDamage(1);
-
             }
-
         }
-
-
     }
-    private void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.tag=="Ground"){
-            isGround=true;
-            animator.SetBool("Jump",false);
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGround = true;
+            animator.SetBool("Jump", false);
         }
-        if(collision.gameObject.tag=="KEY"){
+        if (collision.gameObject.tag == "KEY")
+        {
             gameVictoryUi.SetActive(true);
-
+            isWon = true;
+            Destroy(collision.gameObject);
         }
     }
+
     private void OnDrawGizmosSelected()
-    {if (attackPoint == null)
+    {
+        if (attackPoint == null)
         {
             return;
         }
-        Gizmos.color=Color.blue;
-        Gizmos.DrawWireSphere(attackPoint.position,attackRadius);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
-    private void OnTriggerEnter2D(Collider2D collision){
-        
-        if(collision.gameObject.tag=="Coin"){
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Coin")
+        {
             currentCoin++;
             collision.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Collect");
-            Destroy(collision.gameObject,1f);
+            Destroy(collision.gameObject, 1f);
         }
-        if(collision.gameObject.tag=="Trap"){
+        if (collision.gameObject.tag == "Trap")
+        {
             Die();
         }
-        
     }
-    public void PlayerTakeDamage(int damage){
-        if(maxHealth<=0){
+
+    public void PlayerTakeDamage(int damage)
+    {
+        if (maxHealth <= 0)
+        {
             return;
         }
-        maxHealth-=damage;
+        maxHealth -= damage;
     }
-    void Die(){
+
+    void Die()
+    {
         Debug.Log("Player died");
         Destroy(this.gameObject);
         gameOverUI.SetActive(true);
     }
-    }
+}
 

@@ -1,40 +1,40 @@
 fileFormatVersion: 2
-guid: d6e3ad1e75d610d40a39a70ed85e0c38
+guid: 80cf04a6a8bcd6446a6d7df468a1df4e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8296385383580801948
-    second: walk_0
+      213: -3360928576007487524
+    second: Bat-Attack2_0
   - first:
-      213: 3218353051568008401
-    second: walk_1
+      213: 1433283180146207013
+    second: Bat-Attack2_1
   - first:
-      213: 6971375644381031630
-    second: walk_2
+      213: -50175975255986556
+    second: Bat-Attack2_2
   - first:
-      213: -3714987382563562326
-    second: walk_3
+      213: 8038217047353360322
+    second: Bat-Attack2_3
   - first:
-      213: -2044624726750869082
-    second: walk_4
+      213: -2187873852825670964
+    second: Bat-Attack2_4
   - first:
-      213: -1800561202758830752
-    second: walk_5
+      213: 1576388397293603164
+    second: Bat-Attack2_5
   - first:
-      213: -7072565547094396234
-    second: walk_6
+      213: 4127612531767738023
+    second: Bat-Attack2_6
   - first:
-      213: -6780060589664581786
-    second: walk_7
+      213: 6352858989827537929
+    second: Bat-Attack2_7
   - first:
-      213: 2251703588619409307
-    second: walk_8
+      213: -7246643240521344652
+    second: Bat-Attack2_8
   - first:
-      213: -5224373444711448209
-    second: walk_9
+      213: -8485750876489600730
+    second: Bat-Attack2_9
   - first:
-      213: 8428286525173097495
-    second: walk_10
+      213: -9214628519888500846
+    second: Bat-Attack2_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -67,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -81,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -130,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk_0
+      name: Bat-Attack2_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 0
-        width: 88
-        height: 76
+        x: 14
+        y: 23
+        width: 36
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4646ce323715ddc80800000000000000
-      internalID: -8296385383580801948
+      spriteID: cdf3d9f54459b51d0800000000000000
+      internalID: -3360928576007487524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_1
+      name: Bat-Attack2_1
       rect:
         serializedVersion: 2
-        x: 147
-        y: 0
-        width: 86
-        height: 77
+        x: 90
+        y: 24
+        width: 24
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1dc61808c03e9ac20800000000000000
-      internalID: 3218353051568008401
+      spriteID: 529282f557b04e310800000000000000
+      internalID: 1433283180146207013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_2
+      name: Bat-Attack2_2
       rect:
         serializedVersion: 2
-        x: 276
-        y: 0
-        width: 85
-        height: 78
+        x: 159
+        y: 25
+        width: 28
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ecc242f663d4fb060800000000000000
-      internalID: 6971375644381031630
+      spriteID: 48eab92673dbd4ff0800000000000000
+      internalID: -50175975255986556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_3
+      name: Bat-Attack2_3
       rect:
         serializedVersion: 2
-        x: 405
-        y: 0
-        width: 83
-        height: 79
+        x: 225
+        y: 26
+        width: 28
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,20 +211,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aac9d3d88a6b17cc0800000000000000
-      internalID: -3714987382563562326
+      spriteID: 2cf7cf6f0db7d8f60800000000000000
+      internalID: 8038217047353360322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_4
+      name: Bat-Attack2_4
       rect:
         serializedVersion: 2
-        x: 534
-        y: 0
-        width: 82
-        height: 78
+        x: 282
+        y: 29
+        width: 25
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,20 +233,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a9c807d4a800a3e0800000000000000
-      internalID: -2044624726750869082
+      spriteID: ccae5fc925c13a1e0800000000000000
+      internalID: -2187873852825670964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_5
+      name: Bat-Attack2_5
       rect:
         serializedVersion: 2
-        x: 663
-        y: 0
-        width: 82
-        height: 77
+        x: 338
+        y: 29
+        width: 24
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 065b539302f1307e0800000000000000
-      internalID: -1800561202758830752
+      spriteID: c598bb035e470e510800000000000000
+      internalID: 1576388397293603164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_6
+      name: Bat-Attack2_6
       rect:
         serializedVersion: 2
-        x: 791
-        y: 0
-        width: 83
-        height: 76
+        x: 398
+        y: 28
+        width: 19
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,20 +277,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b2b5c26b1339dd90800000000000000
-      internalID: -7072565547094396234
+      spriteID: 7ae77768ab9384930800000000000000
+      internalID: 4127612531767738023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_7
+      name: Bat-Attack2_7
       rect:
         serializedVersion: 2
-        x: 918
-        y: 0
-        width: 83
-        height: 77
+        x: 452
+        y: 29
+        width: 25
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 667ca65e0d268e1a0800000000000000
-      internalID: -6780060589664581786
+      spriteID: 90c31d4a793e92850800000000000000
+      internalID: 6352858989827537929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_8
+      name: Bat-Attack2_8
       rect:
         serializedVersion: 2
-        x: 1045
-        y: 0
-        width: 84
-        height: 78
+        x: 514
+        y: 27
+        width: 23
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b97d12bdb78af3f10800000000000000
-      internalID: 2251703588619409307
+      spriteID: 4795dbafd50ce6b90800000000000000
+      internalID: -7246643240521344652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_9
+      name: Bat-Attack2_9
       rect:
         serializedVersion: 2
-        x: 1173
-        y: 0
-        width: 84
-        height: 79
+        x: 577
+        y: 27
+        width: 23
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,20 +343,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f618dfd280c4f77b0800000000000000
-      internalID: -5224373444711448209
+      spriteID: 621b06a898e8c3a80800000000000000
+      internalID: -8485750876489600730
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_10
+      name: Bat-Attack2_10
       rect:
         serializedVersion: 2
-        x: 1297
-        y: 0
-        width: 89
-        height: 78
+        x: 648
+        y: 22
+        width: 29
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,8 +365,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 714672e80f947f470800000000000000
-      internalID: 8428286525173097495
+      spriteID: 297ccdeae201f1080800000000000000
+      internalID: -9214628519888500846
       vertices: []
       indices: 
       edges: []
@@ -384,18 +384,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      walk_0: -8296385383580801948
-      walk_1: 3218353051568008401
-      walk_10: 8428286525173097495
-      walk_2: 6971375644381031630
-      walk_3: -3714987382563562326
-      walk_4: -2044624726750869082
-      walk_5: -1800561202758830752
-      walk_6: -7072565547094396234
-      walk_7: -6780060589664581786
-      walk_8: 2251703588619409307
-      walk_9: -5224373444711448209
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

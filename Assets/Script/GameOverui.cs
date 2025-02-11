@@ -5,9 +5,12 @@ public class GameOverui : MonoBehaviour
 {
 
 public void Menu(){
-SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+Debug.Log("Menu");
+
+SceneManager.LoadScene("Menu");
 }
 public void Retry(){
+Debug.Log("Retry");
 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 }
     
