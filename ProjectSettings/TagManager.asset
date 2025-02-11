@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Coin
+  - Trap
+  - KEY
   layers:
   - Default
   - TransparentFX
@@ -65,6 +68,9 @@ TagManager:
     locked: 0
   - name: heart
     uniqueID: 1782990319
+    locked: 0
+  - name: KEY
+    uniqueID: 3563300981
     locked: 0
   m_RenderingLayers:
   - Default

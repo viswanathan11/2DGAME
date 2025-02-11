@@ -1,8 +1,14 @@
 using UnityEngine.UI;
 using UnityEngine;
+using Unity.VisualScripting;
+using System.Security.Cryptography;
 
 public class player : MonoBehaviour
 {
+    public GameObject gameVictoryUi;
+    public GameObject gameOverUI;
+    public int currentCoin=0;
+    public Text CurrentCoinText;
     public Text MaxHealthText;
     public  Animator animator;
     private float movement;
@@ -25,7 +31,7 @@ public class player : MonoBehaviour
 
     // Update is called once per frame
     void Update() 
-    {
+    {CurrentCoinText.text=currentCoin.ToString();
         if(maxHealth<=0){
             Die();
         }
@@ -99,6 +105,10 @@ public class player : MonoBehaviour
             isGround=true;
             animator.SetBool("Jump",false);
         }
+        if(collision.gameObject.tag=="KEY"){
+            gameVictoryUi.SetActive(true);
+
+        }
     }
     private void OnDrawGizmosSelected()
     {if (attackPoint == null)
@@ -107,6 +117,18 @@ public class player : MonoBehaviour
         }
         Gizmos.color=Color.blue;
         Gizmos.DrawWireSphere(attackPoint.position,attackRadius);
+    }
+    private void OnTriggerEnter2D(Collider2D collision){
+        
+        if(collision.gameObject.tag=="Coin"){
+            currentCoin++;
+            collision.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Collect");
+            Destroy(collision.gameObject,1f);
+        }
+        if(collision.gameObject.tag=="Trap"){
+            Die();
+        }
+        
     }
     public void PlayerTakeDamage(int damage){
         if(maxHealth<=0){
@@ -117,6 +139,7 @@ public class player : MonoBehaviour
     void Die(){
         Debug.Log("Player died");
         Destroy(this.gameObject);
+        gameOverUI.SetActive(true);
     }
     }
 
