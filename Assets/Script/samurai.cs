@@ -16,9 +16,11 @@ public class samurai : MonoBehaviour
     public float attackRange = 2.5f;
     public Animator animator;
     public Transform attackPoint;
-    public float attackRadius=2f;
+    public float attackRadius = 2f;
     public LayerMask AttackLayer;
-    public int maxHealth=3;
+    public int maxHealth = 3;
+    private bool toggleAttack = false;
+    private bool isAttacking = false;
 
     void Update()
     {
@@ -31,7 +33,7 @@ public class samurai : MonoBehaviour
             animator.SetBool("Playerdead", true);
             return;
         }
-        
+
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             playerinRange = true;
@@ -41,9 +43,8 @@ public class samurai : MonoBehaviour
             playerinRange = false;
         }
 
-        if (playerinRange)
+        if (playerinRange && !isAttacking)
         {
-            // Ensure the enemy always faces the player
             if (transform.position.x < player.position.x)
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
@@ -57,21 +58,24 @@ public class samurai : MonoBehaviour
 
             if (Vector2.Distance(transform.position, player.position) > attackRange)
             {
-                // If player is out of range, enemy will chase the player
                 animator.SetBool("Attack", false);
+                animator.SetBool("Attack1", false);
                 transform.position = Vector2.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
             }
             else
             {
-                // If player is in range, enemy will attack the player
                 Debug.Log("Attack");
-                animator.SetBool("Attack", true);
+                toggleAttack = !toggleAttack;
+                animator.SetBool("Attack", toggleAttack);
+                animator.SetBool("Attack1", !toggleAttack);
+                isAttacking = true;
+                Invoke("ResetAttack", GetCurrentAnimationLength());
             }
         }
-        else
+        else if (!playerinRange)
         {
-            // Patrol logic
             animator.SetBool("Attack", false);
+            animator.SetBool("Attack1", false);
             transform.Translate(Vector2.right * walkSpeed * Time.deltaTime);
             RaycastHit2D hit = Physics2D.Raycast(detectPoint.position, Vector2.down, distance, detectlayer);
 
@@ -91,6 +95,26 @@ public class samurai : MonoBehaviour
         }
     }
 
+    private float GetCurrentAnimationLength()
+    {
+        AnimatorStateInfo stateInfo;
+        if (toggleAttack)
+        {
+            stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            return stateInfo.length;
+        }
+        else
+        {
+            stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            return stateInfo.length;
+        }
+    }
+
+    private void ResetAttack()
+    {
+        isAttacking = false;
+    }
+
     public void EnemyAttack()
     {
         Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, AttackLayer);
@@ -105,11 +129,16 @@ public class samurai : MonoBehaviour
 
     public void EnemyTakeDamage(int damage)
     {
+        Debug.Log("EnemyTakeDamage called with damage: " + damage);
         if (maxHealth <= 0)
         {
             return;
         }
         maxHealth -= damage;
+        if (maxHealth <= 0)
+        {
+            Die();
+        }
     }
 
     public void Die()

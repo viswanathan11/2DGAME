@@ -114,6 +114,10 @@ public class player : MonoBehaviour
             {
                 hitInfo.GetComponent<enemyknight>().EnemyTakeDamage(1);
             }
+            if(hitInfo.GetComponent<samurai>() != null)
+            {
+                hitInfo.GetComponent<samurai>().EnemyTakeDamage(1);
+            }
         }
     }
 

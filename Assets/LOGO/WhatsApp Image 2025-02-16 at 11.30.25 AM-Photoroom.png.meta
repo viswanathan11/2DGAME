@@ -1,10 +1,70 @@
 fileFormatVersion: 2
-guid: 7e5e409ceb032cb469780289f4f7f18f
+guid: 56a0f2e94b01905499172e3bbf60d7db
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3654598859145395693
-    second: WhatsApp Image 2025-02-15 at 7.29.37 PM_0
+      213: -3481004091679641964
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_0
+  - first:
+      213: 6296260098233702721
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_1
+  - first:
+      213: 7302685147820829360
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_2
+  - first:
+      213: -2652513745354884326
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_3
+  - first:
+      213: 496895030663235419
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_4
+  - first:
+      213: -3234971046371857755
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_5
+  - first:
+      213: -1956136564738355647
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_6
+  - first:
+      213: -7752821328121564215
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_7
+  - first:
+      213: -6896415789694459339
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_8
+  - first:
+      213: 9106715968659594273
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_9
+  - first:
+      213: 8864841241750649445
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_10
+  - first:
+      213: 7981099161465631662
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_11
+  - first:
+      213: -9086109379189292911
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_12
+  - first:
+      213: -5080755690956921126
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_13
+  - first:
+      213: 6423622357967229975
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_14
+  - first:
+      213: 6034378046587680090
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_15
+  - first:
+      213: 2490970804157412886
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_16
+  - first:
+      213: 8804819272727505926
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_17
+  - first:
+      213: -7298599845891472006
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_18
+  - first:
+      213: -9113733154666608409
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_19
+  - first:
+      213: 2184189182333173497
+    second: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_20
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +111,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +160,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WhatsApp Image 2025-02-15 at 7.29.37 PM_0
+      name: WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 713
-        height: 350
+        width: 1280
+        height: 878
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 312471453b1484dc0800000000000000
-      internalID: -3654598859145395693
+      spriteID: 49ee0c5c83df0bfc0800000000000000
+      internalID: -3481004091679641964
       vertices: []
       indices: 
       edges: []
@@ -125,7 +185,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c009c7fad294845468f41984059a694d
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +195,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WhatsApp Image 2025-02-15 at 7.29.37 PM_0: -3654598859145395693
+      WhatsApp Image 2025-02-16 at 11.30.25 AM-Photoroom_0: -3481004091679641964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

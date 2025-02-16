@@ -1,10 +1,12 @@
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
-public class enemy2 : MonoBehaviour
+public class enemy2: MonoBehaviour
 {
     public float walkSpeed = 2f;
     public LayerMask detectlayer;
-    private bool facingLeft = false; // Initially facing right
+    private bool facingLeft = true;
     public Transform player;
     private bool playerinRange = false;
 
@@ -14,22 +16,21 @@ public class enemy2 : MonoBehaviour
     public float attackRange = 2.5f;
     public Animator animator;
     public Transform attackPoint;
-    public float attackRadius = 2f;
-    public LayerMask AttackLayer;
-    public int maxHealth = 3;
+    public float attackRadius=2f;
+     public LayerMask AttackLayer;
+     public int maxHealth=3;
 
-    // Update is called once per frame
+    
+
+    // Update is called once per frame run every single time
     void Update()
-    {
-        if (maxHealth <= 0)
-        {
-            Die();
-        }
-        if (player == null)
-        {
-            animator.SetBool("Playerdead", true);
-            return;
-        }
+    {if(maxHealth<=0){
+        Die();
+    }
+    if(player==null){
+        animator.SetBool("Playerdead",true);
+        return;
+    }
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             playerinRange = true;
@@ -44,13 +45,13 @@ public class enemy2 : MonoBehaviour
             if (transform.position.x < player.position.x && facingLeft)
             {
                 // Enemy will face right when player is on the right side
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                transform.eulerAngles = new Vector3(0, -180, 0);
                 facingLeft = false;
             }
             else if (transform.position.x > player.position.x && !facingLeft)
             {
                 // Enemy will face left when player is on the left side
-                transform.eulerAngles = new Vector3(0, 180, 0);
+                transform.eulerAngles = new Vector3(0, 0, 0);
                 facingLeft = true;
             }
 
@@ -77,44 +78,38 @@ public class enemy2 : MonoBehaviour
             {
                 if (facingLeft)
                 {
-                    transform.eulerAngles = new Vector3(0, 0, 0);
+                    transform.eulerAngles = new Vector3(0, 180, 0);
                     facingLeft = false;
                 }
                 else
                 {
-                    transform.eulerAngles = new Vector3(0, 180, 0);
+                    transform.eulerAngles = new Vector3(0, 0, 0);
                     facingLeft = true;
                 }
             }
         }
     }
-
-    public void EnemyAttack()
-    {
-        Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, AttackLayer); // it will return the collider of the object that is in the range of the attack point
-        if (collInfo)
-        {
-            if (collInfo.GetComponent<player>() != null)
-            {
-                collInfo.GetComponent<player>().PlayerTakeDamage(1);
-            }
-        }
+    
+public void EnemyAttack(){
+    Collider2D collInfo = Physics2D.OverlapCircle(attackPoint.position,attackRadius,AttackLayer);//it will return the collider of the object that is in the range of the attack point
+    if(collInfo){
+    if(collInfo.GetComponent<player>()!=null){
+        collInfo.GetComponent<player>().PlayerTakeDamage(1);
     }
-
-    public void EnemyTakeDamage(int damage)
-    {
-        if (maxHealth <= 0)
-        {
-            return; // whatever line after it will not be executed
-        }
-        maxHealth -= damage;
     }
-
-    public void Die()
-    {
-        Debug.Log("Enemy died");
-        Destroy(this.gameObject);
+ }
+public void EnemyTakeDamage(int damage){
+    if(maxHealth<=0){
+        return;//whatever line after it will not be executed
     }
+    maxHealth-=damage;
+
+}
+public void Die(){
+    Debug.Log("Enemy died");
+    Destroy(this.gameObject);
+
+}
 
     private void OnDrawGizmosSelected()
     {
@@ -124,10 +119,9 @@ public class enemy2 : MonoBehaviour
         }
         Gizmos.color = Color.yellow;
         Gizmos.DrawRay(detectPoint.position, Vector2.down * distance);
-        if (attackPoint != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        if(attackPoint!=null){
+            Gizmos.color=Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position,attackRadius);
         }
     }
 }
