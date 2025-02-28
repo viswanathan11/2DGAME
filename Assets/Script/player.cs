@@ -1,6 +1,6 @@
-using UnityEngine.UI;
 using UnityEngine;
-
+using UnityEngine.UI;
+using System.Collections;
 
 public class player : MonoBehaviour
 {
@@ -86,6 +86,13 @@ public class player : MonoBehaviour
                 animator.SetTrigger("Attack3");
             }
         }
+
+        // Add rolling functionality
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            StartCoroutine(PerformRoll());
+        }
+
         if (transform.position.y < fallThreshold) // Adjust the value based on your level
         {
             Die();
@@ -174,6 +181,13 @@ public class player : MonoBehaviour
         Debug.Log("Player died");
         Destroy(this.gameObject);
         gameOverUI.SetActive(true);
+    }
+
+    private IEnumerator PerformRoll()
+    {
+        animator.SetBool("Roll", true);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        animator.SetBool("Roll", false);
     }
 }
 
