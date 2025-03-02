@@ -26,6 +26,7 @@ public class player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        FindAnyObjectByType<sound>().backgroundmusic();
     }
 
     // Update is called once per frame
@@ -75,14 +76,17 @@ public class player : MonoBehaviour
             int randomIndex = Random.Range(0, 3);
             if (randomIndex == 0)
             {
+                FindAnyObjectByType<sound>().Sword();
                 animator.SetTrigger("Attack1");
             }
             else if (randomIndex == 1)
             {
+                FindAnyObjectByType<sound>().Sword();
                 animator.SetTrigger("Attack2");
             }
             else if (randomIndex == 2)
             {
+                FindAnyObjectByType<sound>().Sword();
                 animator.SetTrigger("Attack3");
             }
         }
@@ -160,6 +164,7 @@ public class player : MonoBehaviour
             currentCoin++;
             collision.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Collect");
             Destroy(collision.gameObject, 1f);
+            FindAnyObjectByType<sound>().Coinsound();
         }
         if (collision.gameObject.tag == "Trap")
         {

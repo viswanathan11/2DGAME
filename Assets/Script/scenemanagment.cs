@@ -4,6 +4,10 @@ using System;
 
 public class scenemanagment : MonoBehaviour
 {
+void Start()
+    {
+    }
+
     public void play()
 {
     SceneManager.LoadScene(1);
