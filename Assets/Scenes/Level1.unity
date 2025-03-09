@@ -2956,6 +2956,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1802656531}
+    - target: {fileID: 3591556230951846336, guid: 0d89b4dd8ecead64988754c6f707cb08, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4310,19 +4314,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1989616317753572392, guid: 6ef51966f2c4c6347bb7a7c664e0bb1f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -457.8489
       objectReference: {fileID: 0}
     - target: {fileID: 1989616317753572392, guid: 6ef51966f2c4c6347bb7a7c664e0bb1f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -936.207
       objectReference: {fileID: 0}
     - target: {fileID: 1989616317753572392, guid: 6ef51966f2c4c6347bb7a7c664e0bb1f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -6.500061
       objectReference: {fileID: 0}
     - target: {fileID: 1989616317753572392, guid: 6ef51966f2c4c6347bb7a7c664e0bb1f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 221.5517
+      value: 319.78882
       objectReference: {fileID: 0}
     - target: {fileID: 3301337287516944045, guid: 6ef51966f2c4c6347bb7a7c664e0bb1f, type: 3}
       propertyPath: m_IsActive
@@ -4496,6 +4500,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1802656531}
+    - target: {fileID: 1068841139019317899, guid: 9ef0102158f8bda42b83720c6a7ddf40, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4765934622619621465, guid: 9ef0102158f8bda42b83720c6a7ddf40, type: 3}
       propertyPath: m_LocalPosition.x
       value: 168.15111
@@ -4597,6 +4605,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1802656531}
+    - target: {fileID: 3591556230951846336, guid: 0d89b4dd8ecead64988754c6f707cb08, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3591556230951846336, guid: 0d89b4dd8ecead64988754c6f707cb08, type: 3}
       propertyPath: attackRange
       value: 5
