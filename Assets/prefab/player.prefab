@@ -177,12 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a1776aa09531d4cb4ec6b67ebbd77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallThreshold: -15
-  gameVictoryUi: {fileID: 0}
-  gameOverUI: {fileID: 0}
-  currentCoin: 0
-  CurrentCoinText: {fileID: 0}
-  MaxHealthText: {fileID: 0}
   animator: {fileID: 4434765046561112}
   speed: 7
   jumpHeight: 10
@@ -192,7 +186,6 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 256
-  maxHealth: 20
 --- !u!95 &4434765046561112
 Animator:
   serializedVersion: 7
