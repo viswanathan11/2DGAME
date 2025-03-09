@@ -26,12 +26,14 @@ public class player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        FindAnyObjectByType<sound>().backgroundmusic();
+        Debug.Log("Start method called");
+        FindObjectOfType<sound>().backgroundmusic();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Update method called");
         if (isWon)
         {
             animator.SetFloat("Run", 0);
@@ -56,7 +58,7 @@ public class player : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
             facingRight = true;
         }
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.UpArrow)) && isGround == true)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && isGround == true)
         {
             jump();
             isGround = false;
@@ -73,27 +75,30 @@ public class player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F))
         {
+            Debug.Log("Attack button pressed");
             int randomIndex = Random.Range(0, 3);
             if (randomIndex == 0)
             {
-                FindAnyObjectByType<sound>().Sword();
+                FindObjectOfType<sound>().Sword();
                 animator.SetTrigger("Attack1");
             }
             else if (randomIndex == 1)
             {
-                FindAnyObjectByType<sound>().Sword();
+                FindObjectOfType<sound>().Sword();
                 animator.SetTrigger("Attack2");
             }
             else if (randomIndex == 2)
             {
-                FindAnyObjectByType<sound>().Sword();
+                FindObjectOfType<sound>().Sword();
                 animator.SetTrigger("Attack3");
             }
+            Attack(); // Ensure the Attack method is called when the player attacks
         }
 
         // Add rolling functionality
-        if (Input.GetKeyDown(KeyCode.DownArrow)||Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
+            Debug.Log("Roll button pressed");
             StartCoroutine(PerformRoll());
         }
 
@@ -110,6 +115,7 @@ public class player : MonoBehaviour
 
     void jump()
     {
+        Debug.Log("Jump method called");
         // Jumping code
         Vector2 velocity = rb.velocity;
         velocity.y = jumpHeight;
@@ -118,17 +124,23 @@ public class player : MonoBehaviour
 
     public void Attack()
     {
+        Debug.Log("Attack method called"); // Debugging statement
         Collider2D hitInfo = Physics2D.OverlapCircle(attackPoint.position, attackRadius, targetLayer);
         if (hitInfo)
         {
+            Debug.Log("Hit detected: " + hitInfo.name); // Debugging statement
             if (hitInfo.GetComponent<enemyknight>() != null)
             {
                 hitInfo.GetComponent<enemyknight>().EnemyTakeDamage(1);
             }
-            if(hitInfo.GetComponent<samurai>() != null)
+            if (hitInfo.GetComponent<samurai>() != null)
             {
                 hitInfo.GetComponent<samurai>().EnemyTakeDamage(1);
             }
+        }
+        else
+        {
+            Debug.Log("No hit detected"); // Debugging statement
         }
     }
 
@@ -164,7 +176,7 @@ public class player : MonoBehaviour
             currentCoin++;
             collision.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Collect");
             Destroy(collision.gameObject, 1f);
-            FindAnyObjectByType<sound>().Coinsound();
+            FindObjectOfType<sound>().Coinsound();
         }
         if (collision.gameObject.tag == "Trap")
         {
