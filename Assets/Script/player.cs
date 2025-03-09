@@ -56,7 +56,7 @@ public class player : MonoBehaviour
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
             facingRight = true;
         }
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.W)) && isGround == true)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.UpArrow)) && isGround == true)
         {
             jump();
             isGround = false;
@@ -92,7 +92,7 @@ public class player : MonoBehaviour
         }
 
         // Add rolling functionality
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow)||Input.GetKeyDown(KeyCode.S))
         {
             StartCoroutine(PerformRoll());
         }

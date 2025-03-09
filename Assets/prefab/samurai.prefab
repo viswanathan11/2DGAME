@@ -166,7 +166,7 @@ MonoBehaviour:
   chaseSpeed: 4
   detectPoint: {fileID: 9062267013123665098}
   distance: 0.72
-  attackRange: 4
+  attackRange: 4.55
   animator: {fileID: 5740845875619050964}
   attackPoint: {fileID: 3635692592181851678}
   attackRadius: 2.48
