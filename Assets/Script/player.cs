@@ -138,10 +138,7 @@ public class player : MonoBehaviour
                 hitInfo.GetComponent<samurai>().EnemyTakeDamage(1);
             }
         }
-        else
-        {
-            Debug.Log("No hit detected"); // Debugging statement
-        }
+       
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
