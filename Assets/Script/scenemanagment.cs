@@ -14,6 +14,7 @@ void Start()
 }
 public void exit(){
     Debug.Log("Exit");
+    Application.Quit();
 }
  public void Menu(){
 
